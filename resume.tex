@@ -19,7 +19,7 @@
 \begin{center}
     {\LARGE \textbf{Rory Tyler Hayford}}\\
     \vspace{4pt}
-    Senior Software Developer -- Distributed Systems (Rust / Haskell / Nix / AWS)\\
+    Senior Software Engineer -- Distributed Systems \& Infrastructure (Rust / Haskell / Nix / AWS)\\
     \vspace{4pt}
     \href{mailto:rory.hayford@protonmail.com}{rory.hayford@protonmail.com} \quad
     \href{https://github.com/ngua}{github.com/ngua}
@@ -29,7 +29,7 @@
 
 \section*{Summary}
 
-Senior software developer specializing in distributed systems, concurrent infrastructure, and production ML/LLM platforms. Experience spans industrial automation, blockchain systems, and edge-device orchestration. Strong background in Rust, Haskell, Nix, and AWS, with a focus on reproducibility, safe concurrency, and pragmatic systems design.
+Senior software engineer who designs and builds complex distributed systems end to end, from architecture and security model through production operation. Over eight years of professional experience across industrial automation (a SCADA platform running on thousands of edge devices), blockchain infrastructure (Cardano smart contracts and tooling), and production ML/LLM platforms. Works primarily in Rust and Haskell, with deep Nix and AWS experience. Focused on safe concurrency, reproducibility, and designs that hold up under unreliable networks and strict security constraints.
 
 \section*{Professional Experience}
 
@@ -39,17 +39,13 @@ Plow Technologies $\rightarrow$ PAKScada (Acquired by PAK) \hfill Nov 2022 -- Pr
 Senior contributor on a small, high-autonomy team building an industrial automation and SCADA platform deployed across thousands of edge devices in oil, gas, renewables, and other industrial environments.
 
 \begin{itemize}
-    \item Designed and implemented production ML and LLM integration into the company's SCADA scripting language (Inferno), enabling users to invoke TorchScript models and AWS Bedrock LLMs directly from scripts.
-    \item Architected and built a hybrid Rust/Haskell orchestration system (proprietary) handling model abstraction, runtime execution, EC2 lifecycle management, permissions enforcement, and secure inter-service communication.
-    \item Implemented AWS Bedrock integration in Rust for reliable LLM invocation, including model configuration, request abstraction, and isolation from execution nodes.
-    \item Designed model abstraction layer spanning scripting language types, database persistence, runtime dispatch, and execution isolation.
-    \item Built GPU-aware execution infrastructure supporting TorchScript inference via libtorch (Hasktorch bindings) for numerically intensive time-series workloads.
-    \item Designed and built reproducible NixOS-based EC2 image system for secure, self-contained runtime environment (deployed and managed via orchestration system).
-    \item Re-designed and re-implemented edge device package installation system for Linux-based devices operating in low-connectivity environments.
-    \item Implemented resumable package downloads using libcurl interface, resolving long-standing reliability issues affecting remote devices connected via extremely slow cellular networks.
-    \item Contributed extensively to concurrency-critical infrastructure coordinating thousands of remote device updates across unreliable networks.
-    \item Rewrote and modernized company Nix infrastructure, migrating to flakes and enforcing reproducible builds across development and deployment environments.
-    \item Regularly work across Haskell, Nix, Rust, AWS (EC2, S3, Bedrock), and Linux systems.
+    \item Sole owner of the platform's AI/LLM integration. Architected and built Inferno ML, the production layer that lets users invoke TorchScript models and AWS Bedrock LLMs directly from the company's SCADA scripting language (Inferno), and the foundation of PAKScada's new Plunger AI product.
+    \item Designed its hybrid Rust/Haskell orchestration system: a model abstraction spanning language types, database persistence, and runtime dispatch; EC2 lifecycle management; permissions enforcement; and secure inter-service communication.
+    \item Designed a strict isolation and permissions model that keeps secrets off execution nodes, routing all LLM calls through a dedicated Rust service wrapping AWS Bedrock (model configuration, request abstraction, prompt caching), built for high-volume, per-well workloads; currently adding a radix-trie input cache.
+    \item Built GPU-aware execution infrastructure for TorchScript inference via libtorch (Hasktorch bindings) on numerically intensive time-series workloads, running on reproducible, self-contained NixOS EC2 images deployed and managed by the orchestrator.
+    \item Redesigned and reimplemented the package installation system for Linux edge devices in low-connectivity environments, including resumable downloads over libcurl that resolved long-standing failures on devices behind extremely slow cellular links.
+    \item Core contributor to concurrency-critical infrastructure coordinating updates across thousands of remote devices over unreliable networks.
+    \item Rewrote and modernized the company's Nix infrastructure, migrating to flakes and enforcing reproducible builds across development and deployment environments.
 \end{itemize}
 
 \vspace{6pt}
@@ -60,10 +56,9 @@ MLabs \hfill Oct 2021 -- Nov 2022
 Senior contributor on Haskell-based blockchain and infrastructure projects within the Cardano ecosystem. Promoted to Delivery Manager within one year.
 
 \begin{itemize}
+    \item Developed and reviewed Plutus smart contracts for production systems on the Cardano blockchain, and contributed to the backend Haskell services and tooling supporting them.
+    \item Co-designed and implemented a PureScript interface layer for Cardano smart contract interaction, enabling browser-native wallet connectivity and improving developer ergonomics.
     \item Served as primary technical liaison between MLabs and IOG (Input Output Global), coordinating auditing, testing, and feature development across multiple open-source blockchain projects.
-    \item Developed and reviewed smart contracts on the Cardano blockchain (Plutus), contributing to production blockchain systems.
-    \item Co-designed and implemented a PureScript interface layer for Cardano smart contract interaction, enabling browser-native wallet connectivity and improved developer ergonomics.
-    \item Contributed to backend Haskell services supporting blockchain infrastructure and tooling.
     \item Led architectural discussions across distributed teams and mentored developers on Haskell, Nix, and testing practices.
     \item Managed project planning, delivery timelines, and stakeholder communication across concurrent engagements.
 \end{itemize}
@@ -86,44 +81,38 @@ Antique Buyer's Club \hfill May 2017 -- Apr 2018
     \item Developed and maintained full-stack web application (Python, JavaScript, PostgreSQL).
 \end{itemize}
 
+\newpage
+
 \section*{Selected Technical Projects}
-
-\textbf{Inferno ML (Production System)}
-
-\begin{itemize}
-    \item Extended SCADA scripting language with ML and LLM capabilities.
-    \item Designed backend runtime and orchestration layer from scratch.
-    \item Integrated TorchScript models for high-performance time-series computation.
-    \item Built Rust-based AWS Bedrock interface for LLM invocation from scripts.
-    \item Designed strict isolation and permission model preventing secret leakage to execution nodes.
-\end{itemize}
-
-\vspace{6pt}
 
 \textbf{RUMPS (Rust, Experimental Personal Project)}
 
 \begin{itemize}
-    \item Experimental Rust reimagining of a MUMPS-style hierarchical database system and programming language.
-    \item Focus on storage design, DB-native concurrency, and classic hierarchical data modeling following classic MUMPS.
-    \item Includes both Rust API and interpreter interface (still in development), with focus on modern language features, including HM-style typechecker.
+    \item Rust reimagining of MUMPS, the hierarchical database and programming language.
+    \item Designing the storage engine, a DB-native concurrency model, and hierarchical data modeling faithful to classic MUMPS semantics.
+    \item Exposes both a Rust API and an interpreter (in development) that adds modern language features, including Hindley--Milner type inference.
 \end{itemize}
 
 \section*{Technical Skills}
 
-\textbf{Programming Languages:} Rust, Haskell, Nix/NixOS, Python, TypeScript, Bash
+\textbf{Programming Languages:} Rust, Haskell, Nix, PureScript, Python, TypeScript, Bash
 
-\textbf{Infrastructure \& Systems:} AWS (EC2, S3, Bedrock), Linux, Docker, Distributed Systems, Edge Device Deployment, Reproducible Builds (NixOS, Nix Flakes)
+\textbf{Rust Ecosystem:} Tokio (and ecosystem), Axum, Serde, Itertools, AWS SDK for Rust
 
-\textbf{Concurrency \& Runtime:} Safe concurrency design, multi-service orchestration, async systems
+\textbf{Systems \& Architecture:} Distributed systems design, safe concurrency, async services, multi-service orchestration, isolation and permission models, edge device deployment
+
+\textbf{Infrastructure:} AWS (EC2, S3, Bedrock), Linux, Docker, NixOS, Nix Flakes, reproducible builds
+
+\textbf{Blockchain:} Cardano, Plutus smart contracts, off-chain tooling and wallet integration
 
 \textbf{AI/ML:} TorchScript, libtorch (including FFI wrappers), AWS Bedrock
 
-\textbf{Developer Workflow:} Git, NixOS, Claude Code, Openspec
+\textbf{Developer Workflow:} Git, Claude Code, OpenSpec
 
 \section*{Education}
 
 \textbf{CFA Program} \\
-Passed CFA Level I (Above 90th percentile; global pass rate $\sim$35\%) \hfill Jan 2024
+Passed CFA Level I (above 90th percentile; global pass rate $\sim$35\%) \hfill Jan 2024
 
 \vspace{6pt}
 
