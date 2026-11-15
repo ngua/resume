@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Rory Tyler Hayford}}\\
+    \vspace{4pt}
+    Senior Software Developer -- Distributed Systems (Rust / Haskell / Nix / AWS)\\
+    \vspace{4pt}
+    \href{mailto:rory.hayford@protonmail.com}{rory.hayford@protonmail.com} \quad
+    \href{https://github.com/ngua}{github.com/ngua}
+\end{center}
+
+\vspace{8pt}
+
+\section*{Summary}
+
+Senior software developer specializing in distributed systems, concurrent infrastructure, and production ML/LLM platforms. Experience spans industrial automation, blockchain systems, and edge-device orchestration. Strong background in Rust, Haskell, Nix, and AWS, with a focus on reproducibility, safe concurrency, and pragmatic systems design.
+
+\section*{Professional Experience}
+
+\textbf{Senior Developer} \\
+Plow Technologies $\rightarrow$ PAKScada (Acquired by PAK) \hfill Nov 2022 -- Present
+
+Senior contributor on a small, high-autonomy team building an industrial automation and SCADA platform deployed across thousands of edge devices in oil, gas, renewables, and other industrial environments.
+
+\begin{itemize}
+    \item Designed and implemented production ML and LLM integration into the company's SCADA scripting language (Inferno), enabling users to invoke TorchScript models and AWS Bedrock LLMs directly from scripts.
+    \item Architected and built a hybrid Rust/Haskell orchestration system (proprietary) handling model abstraction, runtime execution, EC2 lifecycle management, permissions enforcement, and secure inter-service communication.
+    \item Implemented AWS Bedrock integration in Rust for reliable LLM invocation, including model configuration, request abstraction, and isolation from execution nodes.
+    \item Designed model abstraction layer spanning scripting language types, database persistence, runtime dispatch, and execution isolation.
+    \item Built GPU-aware execution infrastructure supporting TorchScript inference via libtorch (Hasktorch bindings) for numerically intensive time-series workloads.
+    \item Re-designed and re-implemented edge device package installation system for Linux-based devices operating in low-connectivity environments.
+    \item Implemented resumable package downloads using libcurl, resolving long-standing reliability issues affecting remote devices connected via extremely slow cellular networks.
+    \item Contributed extensively to concurrency-critical infrastructure coordinating thousands of remote device updates across unreliable networks.
+    \item Rewrote and modernized company Nix infrastructure, migrating to flakes and enforcing reproducible builds across development and deployment environments.
+    \item Regularly work across Rust, Haskell, Nix, AWS (EC2, S3, Bedrock), and Linux systems.
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Developer $\rightarrow$ Delivery Manager} \\
+MLabs (Remote) \hfill Oct 2021 -- Nov 2022
+
+Senior contributor on Haskell-based blockchain and infrastructure projects within the Cardano ecosystem. Promoted to Delivery Manager within one year.
+
+\begin{itemize}
+    \item Served as primary technical liaison between MLabs and IOG (Input Output Global), coordinating auditing, testing, and feature development across multiple open-source blockchain projects.
+    \item Developed and reviewed smart contracts on the Cardano blockchain (Plutus), contributing to production blockchain systems.
+    \item Co-designed and implemented a PureScript interface layer for Cardano smart contract interaction, enabling browser-native wallet connectivity and improved developer ergonomics.
+    \item Contributed to backend Haskell services supporting blockchain infrastructure and tooling.
+    \item Led architectural discussions across distributed teams and mentored developers on Haskell, Nix, and testing practices.
+    \item Managed project planning, delivery timelines, and stakeholder communication across concurrent engagements.
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Freelance Developer} \hfill Feb 2019 -- Oct 2021
+
+\begin{itemize}
+    \item Designed, implemented, and deployed backend and networked applications using Haskell, Python, and TypeScript.
+    \item Worked directly with clients to translate requirements into production systems.
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{In-House Developer} \\
+Antique Buyer's Club \hfill May 2017 -- Apr 2018
+
+\begin{itemize}
+    \item Developed and maintained full-stack web application (Python, JavaScript, PostgreSQL).
+\end{itemize}
+
+\section*{Selected Technical Projects}
+
+\textbf{Inferno ML / LLM Extension (Production System)}
+
+\begin{itemize}
+    \item Extended SCADA scripting language with ML and LLM capabilities.
+    \item Designed backend runtime and orchestration layer from scratch.
+    \item Integrated TorchScript models for high-performance time-series computation.
+    \item Built Rust-based AWS Bedrock interface for LLM invocation from scripts.
+    \item Designed strict isolation and permission model preventing secret leakage to execution nodes.
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{RUMPS (Rust, Experimental)}
+
+\begin{itemize}
+    \item Experimental Rust reimagining of a MUMPS-style hierarchical database system.
+    \item Focus on storage design, concurrency primitives, and embedded data modeling.
+\end{itemize}
+
+\section*{Technical Skills}
+
+\textbf{Programming Languages:} Rust, Haskell, Nix, Python, TypeScript, Bash
+
+\textbf{Infrastructure \& Systems:} AWS (EC2, S3, Bedrock), Linux, Docker, Distributed Systems, Edge Device Deployment, Reproducible Builds (Nix Flakes)
+
+\textbf{Concurrency \& Runtime:} Safe concurrency design, multi-service orchestration, async systems
+
+\textbf{AI / ML:} TorchScript, libtorch (via Hasktorch), AWS Bedrock LLM integration
+
+\textbf{Developer Workflow:} Git, NixOS, ChatGPT, Claude Code
+
+\section*{Education}
+
+\textbf{CFA Program} \\
+Passed CFA Level I (Above 90th percentile; global pass rate $\sim$35\%) \hfill Jan 2024
+
+\vspace{6pt}
+
+\textbf{M.S., Applied Linguistics} \\
+Texas A\&M University -- Commerce \hfill Aug 2018 -- Dec 2020 \\
+Summa Cum Laude
+
+\vspace{6pt}
+
+\textbf{B.A., Sociology} \\
+Keene State College \hfill Aug 2010 -- May 2014 \\
+Summa Cum Laude
+
+\section*{Languages}
+
+English (Native) \\
+Vietnamese (Fluent) \\
+French (Advanced) \\
+Spanish (Intermediate)
+
+\end{document}
